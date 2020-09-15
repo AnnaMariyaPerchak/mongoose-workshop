@@ -23,6 +23,9 @@ app.use('/api', api);
 
 // app.use(req, res, next)
 
+// error-handler settings
+require('./config/error-handler')(app)
+
 const port = 4040;
 
 app.listen(port, () => {
