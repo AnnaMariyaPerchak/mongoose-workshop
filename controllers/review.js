@@ -30,7 +30,7 @@ async function updateReview(req, res, next) {
 async function removeReview(req, res, next) {
     try {
         const bookId = req.params.bookId;
-        const result = await reviewService.removeReview(bookId);
+        await reviewService.removeReview(bookId);
         return res.status(200).json({ok: 'ok'});
     } catch (error) {
         next(error)
