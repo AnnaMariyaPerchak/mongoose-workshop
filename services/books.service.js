@@ -22,7 +22,7 @@ async function getAllBooks() {
     return Book.find();
 }
 async function getBook(bookId) {
-    const book = await Book.findById(bookId);
+    const book = await Book.findById(bookId).populate('reviews', 'nickname text createdAt updatedAt');
 
     if (!book) {
         throw badRequest('Book not exists')
