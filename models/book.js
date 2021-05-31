@@ -7,7 +7,7 @@ const BookSchema = new Schema(
         title: {type: String, min: 2, max: 500},
         description: {type: String, max: 5000},
         year: { type: Number },
-        author: {type: ObjectId, ref: 'TrainingRequest'},
+        author: {type: ObjectId, ref: 'User'},
         reviews: [
             {type: ObjectId, ref: 'Review'}
         ]
