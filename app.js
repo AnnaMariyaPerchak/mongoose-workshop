@@ -7,7 +7,8 @@ const app = express();
 
 
 const mongoose = require('mongoose');
-const dev_db_url = 'mongodb://localhost/tc-mongo-workshop';
+const book = require('./models/book');
+const dev_db_url = 'mongodb://127.0.0.1:27017/mongoose_workshop';
 const mongoDB = process.env.MONGODB_URI || dev_db_url;
 const dbOptions = { useUnifiedTopology: true, useNewUrlParser: true};
 mongoose.connect(mongoDB, dbOptions);
@@ -26,7 +27,7 @@ app.use('/api', api);
 // error-handler settings
 require('./config/error-handler')(app)
 
-const port = 4040;
+const port = 3030;
 
 app.listen(port, () => {
     console.log(`Server is up and running on port ${port} `);
